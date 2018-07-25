@@ -1,0 +1,31 @@
+import random
+import time
+
+words=['chandigarh','mumbai','kolkata','chennai','bangalore','hyderabad','ahmedabad','srinagar','nashik','indore']
+word =random.choice(words)
+print("Rules : ")
+print("1. Only Indian cities are included\n2. You have 6 tries to guess the letters\n3. After 6 guesses you have to guess the word by combination of right letter guessed")
+print("The word is ", len(word) ," letters long")
+
+for loop in range(6):
+       letter=input("Guess a letter ")
+
+       if(letter in word):
+           print("Right guess")
+
+       else:
+           print("Wrong guess")
+
+print("\nYou have run out of letter-guesses\nNow guess the word\n")
+
+time1=time.time()
+wordguess=input("Guess the word ")
+
+if(wordguess == word):
+       print("CORRECT")
+
+else:
+       print("INCORRECT")
+time2=time.time()
+totaltime=int(time2-time1)
+print("Total time = ",+totaltime," seconds")
